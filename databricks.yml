@@ -3,3 +3,18 @@ bundle:
 
 include:
   - resources/*.yml
+
+targets:
+
+  dev:
+    mode: development
+    default: true
+
+    workspace:
+      host: https://dbc-6a6e4e14-7ed2.cloud.databricks.com
+
+  prod:
+    mode: production
+
+    workspace:
+      host: https://dbc-6a6e4e14-7ed2.cloud.databricks.com
