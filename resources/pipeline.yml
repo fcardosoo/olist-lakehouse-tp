@@ -8,7 +8,7 @@ resources:
 
       catalog: ecommerce_lakehouse
 
-      target: silver
+      target: gold
 
       serverless: true
 
