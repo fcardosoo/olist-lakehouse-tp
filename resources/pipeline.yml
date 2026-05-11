@@ -17,15 +17,14 @@ resources:
       channel: CURRENT
 
       libraries:
+        - file:
+            path: ../src/bronze/bronze.py
 
         - file:
-            path: ./src/bronze/bronze.py
+            path: ../src/silver/silver.py
 
         - file:
-            path: ./src/silver/silver.py
+            path: ../src/gold/gold.py
 
         - file:
-            path: ./src/gold/gold.py
-
-        - file:
-            path: ./src/quarantine/quarantine.py
+            path: ../src/quarantine/quarantine.py
