@@ -1,0 +1,5 @@
+bundle:
+  name: olist-lakehouse-tp
+
+include:
+  - resources/*.yml
