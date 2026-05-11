@@ -12,9 +12,9 @@ from pyspark.sql.functions import (
 )
 def quarantine_invalid_customers():
 
-    customers = spark.read.table("LIVE.silver_customers")
+    customers = dlt.read("silver_customers")
 
-    orders = spark.read.table("LIVE.silver_orders")
+    orders = dlt.read("silver_orders")
 
     customer_order_counts = (
         customers.alias("c")

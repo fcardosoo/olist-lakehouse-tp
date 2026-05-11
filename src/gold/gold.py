@@ -16,11 +16,11 @@ from pyspark.sql.functions import (
 )
 def gold_customer_payment_analytics():
 
-    customers = spark.read.table("LIVE.silver_customers")
+    customers = dlt.read("silver_customers")
 
-    orders = spark.read.table("LIVE.silver_orders")
+    orders = dlt.read("silver_orders")
 
-    payments = spark.read.table("LIVE.silver_payments")
+    payments = dlt.read("silver_payments")
 
     return (
 

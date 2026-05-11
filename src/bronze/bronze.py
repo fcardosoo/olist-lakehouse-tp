@@ -2,7 +2,7 @@ import dlt
 
 from pyspark.sql.functions import (
     current_timestamp,
-    input_file_name
+    col
 )
 
 VOLUME_PATH = "/Volumes/ecommerce_lakehouse/landing/olist_raw_files/"
@@ -16,7 +16,7 @@ def read_bronze_csv(file_name):
         .option("mode", "PERMISSIVE")
         .load(f"{VOLUME_PATH}/{file_name}")
         .withColumn("_ingestion_timestamp", current_timestamp())
-        .withColumn("_source_file", input_file_name())
+        .withColumn("_source_file", col("_metadata.file_path"))
     )
 
 
