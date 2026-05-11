@@ -1,0 +1,31 @@
+resources:
+
+  pipelines:
+
+    olist_dlt_pipeline:
+
+      name: olist-dlt-pipeline
+
+      catalog: ecommerce_lakehouse
+
+      target: silver
+
+      serverless: true
+
+      continuous: false
+
+      channel: CURRENT
+
+      libraries:
+
+        - file:
+            path: ./src/bronze/bronze.py
+
+        - file:
+            path: ./src/silver/silver.py
+
+        - file:
+            path: ./src/gold/gold.py
+
+        - file:
+            path: ./src/quarantine/quarantine.py
