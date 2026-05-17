@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+
+    commands:
+      - pip install dbt-redshift
+
+  build:
+    commands:
+      - echo "Executando dbt debug"
+      - dbt debug --project-dir dbt_tp
+
+      - echo "Executando dbt run"
+      - dbt run --project-dir dbt_tp
+
+artifacts:
+  files:
+    - '**/*'
