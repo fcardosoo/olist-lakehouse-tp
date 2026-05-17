@@ -6,15 +6,19 @@ phases:
       python: 3.11
 
     commands:
+      - echo "Instalando dbt..."
       - pip install dbt-redshift
 
   build:
     commands:
-      - echo "Executando dbt debug"
-      - dbt debug --project-dir dbt_tp
+      - echo "Iniciando pipeline CI/CD"
+      - echo "Projeto dbt localizado em dbt_tp"
+      - ls
+      - ls dbt_tp
 
-      - echo "Executando dbt run"
-      - dbt run --project-dir dbt_tp
+  post_build:
+    commands:
+      - echo "Build finalizado com sucesso"
 
 artifacts:
   files:
