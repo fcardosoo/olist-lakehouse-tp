@@ -1,1 +1,32 @@
+bundle:
+  name: olist-dlt-bundle
 
+targets:
+  dev:
+    mode: development
+    default: true
+
+    workspace:
+      host: https://dbc-6a6e4e14-7ed2.cloud.databricks.com
+
+resources:
+  pipelines:
+    olist_dlt_pipeline:
+      name: olist-dlt-pipeline
+
+      development: true
+      photon: false
+
+      catalog: main
+      schema: default
+      target: gold
+
+      libraries:
+        - file:
+            path: ../src/bronze/bronze.py
+
+        - file:
+            path: ../src/silver/silver.py
+
+        - file:
+            path: ../src/gold/gold.py
